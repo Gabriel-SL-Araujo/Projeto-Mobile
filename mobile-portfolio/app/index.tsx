@@ -1,81 +1,187 @@
-import { View, Text, StyleSheet, Image, ScrollView } from "react-native";
+import { Link } from "expo-router";
+import {
+  SafeAreaView,
+  ScrollView,
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  Image,
+} from "react-native";
 
-export default function Home() {
+export default function HomeScreen() {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      <Image
-        source={{ uri: "https://avatars.githubusercontent.com/u/111746992?v=4" }}
-        style={styles.avatar}
-      />
+    <SafeAreaView style={styles.safeArea}>
+      <ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}
+      >
+        <View style={styles.header}>
+          <Text style={styles.welcome}>Bem-vindo!</Text>
 
-      <Text style={styles.name}>Gabriel Araújo</Text>
-      <Text style={styles.role}>Desenvolvedor Mobile • React Native + Expo</Text>
+          <Text style={styles.title}>Gabriel de Souza Leão Araújo</Text>
 
-      <Text style={styles.sectionTitle}>Sobre Mim</Text>
-      <Text style={styles.paragraph}>
-        Estudante de Ciência da Computação, apaixonado por desenvolvimento mobile, testes automatizados e criação de soluções eficientes. Atualmente trabalhando com React Native, Expo, Java, Python e boas práticas de software.
-      </Text>
+          <Text style={styles.subtitle}>
+            Software Tester e estudante de Ciência da Computação (UNICAP),
+            interessado em qualidade de software, automação, Data Science e
+            desenvolvimento mobile com React Native + Expo.
+          </Text>
+        </View>
 
-      <Text style={styles.sectionTitle}>Navegação</Text>
-      <Text style={styles.paragraph}>Use o menu superior para acessar:</Text>
+        <View style={styles.photoWrapper}>
+          <Image
+            source={require("../assets/profile.jpeg")}
+            style={styles.photo}
+          />
+        </View>
 
-      <View style={styles.list}>
-        <Text style={styles.listItem}>• Sobre</Text>
-        <Text style={styles.listItem}>• Experiência Acadêmica</Text>
-        <Text style={styles.listItem}>• Experiência Profissional</Text>
-        <Text style={styles.listItem}>• Projetos</Text>
-        <Text style={styles.listItem}>• Jogo</Text>
-      </View>
-    </ScrollView>
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Navegação</Text>
+
+          <Text style={styles.sectionDescription}>
+            Acesse informações sobre minha trajetória acadêmica, experiência
+            profissional, projetos desenvolvidos e experimente um jogo da forca
+            criado especialmente para este aplicativo.
+          </Text>
+
+          <View style={styles.buttonsContainer}>
+            <Link href="/sobre" asChild>
+              <Pressable style={styles.buttonPrimary}>
+                <Text style={styles.buttonPrimaryText}>Sobre</Text>
+              </Pressable>
+            </Link>
+
+            <Link href="/experiencia-academica" asChild>
+              <Pressable style={styles.buttonSecondary}>
+                <Text style={styles.buttonSecondaryText}>
+                  Experiência Acadêmica
+                </Text>
+              </Pressable>
+            </Link>
+
+            <Link href="/experiencia-profissional" asChild>
+              <Pressable style={styles.buttonSecondary}>
+                <Text style={styles.buttonSecondaryText}>
+                  Experiência Profissional
+                </Text>
+              </Pressable>
+            </Link>
+
+            <Link href="/projetos" asChild>
+              <Pressable style={styles.buttonSecondary}>
+                <Text style={styles.buttonSecondaryText}>
+                  Projetos Desenvolvidos
+                </Text>
+              </Pressable>
+            </Link>
+
+            <Link href="/jogo" asChild>
+              <Pressable style={styles.buttonGame}>
+                <Text style={styles.buttonGameText}>Jogo da Forca</Text>
+              </Pressable>
+            </Link>
+          </View>
+        </View>
+      </ScrollView>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#020617",
+  },
   container: {
-    flexGrow: 1,
-    alignItems: "center",
-    paddingVertical: 40,
     paddingHorizontal: 20,
-    backgroundColor: "#0f172a",
+    paddingVertical: 32,
   },
-  avatar: {
-    width: 140,
-    height: 140,
-    borderRadius: 100,
-    marginBottom: 20,
+  header: {
+    marginBottom: 28,
   },
-  name: {
-    fontSize: 28,
-    fontWeight: "bold",
-    color: "#e2e8f0",
+  welcome: {
+    fontSize: 18,
+    color: "#22c55e",
+    fontWeight: "600",
     marginBottom: 4,
   },
-  role: {
-    fontSize: 16,
-    color: "#94a3b8",
-    marginBottom: 30,
+  title: {
+    fontSize: 24,
+    fontWeight: "700",
+    color: "#f9fafb",
+    marginBottom: 8,
+  },
+  subtitle: {
+    fontSize: 14,
+    lineHeight: 20,
+    color: "#9ca3af",
+  },
+
+  photoWrapper: {
+    alignItems: "center",
+    marginVertical: 20,
+  },
+  photo: {
+    width: 160,
+    height: 160,
+    borderRadius: 999,
+    borderWidth: 3,
+    borderColor: "#22c55e",
+  },
+
+  section: {
+    marginTop: 8,
   },
   sectionTitle: {
-    fontSize: 20,
-    color: "#f1f5f9",
-    marginTop: 20,
-    marginBottom: 8,
-    fontWeight: "bold",
-    alignSelf: "flex-start",
+    fontSize: 18,
+    fontWeight: "600",
+    color: "#e5e7eb",
+    marginBottom: 6,
   },
-  paragraph: {
+  sectionDescription: {
+    fontSize: 14,
+    color: "#9ca3af",
+    marginBottom: 16,
+  },
+  buttonsContainer: {
+    gap: 12,
+  },
+
+  buttonPrimary: {
+    paddingVertical: 14,
+    borderRadius: 999,
+    backgroundColor: "#22c55e",
+    alignItems: "center",
+  },
+  buttonPrimaryText: {
+    color: "#022c22",
+    fontWeight: "700",
     fontSize: 15,
-    color: "#cbd5e1",
-    lineHeight: 22,
-    marginBottom: 10,
   },
-  list: {
-    alignSelf: "flex-start",
-    marginTop: 10,
+
+  buttonSecondary: {
+    paddingVertical: 14,
+    borderRadius: 999,
+    borderWidth: 1,
+    borderColor: "#334155",
+    alignItems: "center",
   },
-  listItem: {
-    fontSize: 16,
-    color: "#cbd5e1",
-    marginVertical: 4,
+  buttonSecondaryText: {
+    color: "#e5e7eb",
+    fontWeight: "500",
+    fontSize: 15,
+  },
+
+  buttonGame: {
+    paddingVertical: 14,
+    borderRadius: 999,
+    backgroundColor: "#1d4ed8",
+    alignItems: "center",
+    marginTop: 4,
+  },
+  buttonGameText: {
+    color: "#e5e7eb",
+    fontWeight: "700",
+    fontSize: 15,
   },
 });
