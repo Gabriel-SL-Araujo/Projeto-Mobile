@@ -35,6 +35,7 @@ export default function HomeScreen() {
           />
         </View>
 
+
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Navegação</Text>
 
