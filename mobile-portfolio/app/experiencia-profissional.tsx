@@ -17,7 +17,7 @@ export default function ExperienciaProfissionalScreen() {
           <View style={styles.card}>
             <Text style={styles.cardTitle}>Software Tester · Projeto CIn/Motorola</Text>
             <Text style={styles.cardSubtitle}>Centro de Informática (CIn) · UFPE</Text>
-            <Text style={styles.cardMeta}>2024 — atual · Recife, PE</Text>
+            <Text style={styles.cardMeta}> 2025 / Agosto — atual · Recife, PE</Text>
 
             <Text style={styles.paragraph}>
               Atuo como Software Tester em um time de qualidade focado em
