@@ -7,10 +7,8 @@ export default function ExperienciaProfissionalScreen() {
         contentContainerStyle={styles.container}
         showsVerticalScrollIndicator={false}
       >
-        {/* Título */}
         <Text style={styles.title}>Experiência Profissional</Text>
 
-        {/* Papel principal */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Atuação em Testes de Software</Text>
 
@@ -64,7 +62,6 @@ export default function ExperienciaProfissionalScreen() {
           </View>
         </View>
 
-        {/* Habilidades desenvolvidas */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Habilidades Desenvolvidas</Text>
 
@@ -91,7 +88,6 @@ export default function ExperienciaProfissionalScreen() {
           </View>
         </View>
 
-        {/* Objetivos Profissionais */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Objetivos Profissionais</Text>
 

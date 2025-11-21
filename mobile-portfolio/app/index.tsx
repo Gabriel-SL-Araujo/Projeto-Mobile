@@ -22,9 +22,10 @@ export default function HomeScreen() {
           <Text style={styles.title}>Gabriel de Souza Leão Araújo</Text>
 
           <Text style={styles.subtitle}>
-            Software Tester e estudante de Ciência da Computação (UNICAP),
-            interessado em qualidade de software, automação, Data Science e
-            desenvolvimento mobile com React Native + Expo.
+            Software Tester no Projeto Fade/Motorola e atuo no time de Regressão na parte de Automação
+            e sou estudante de Ciência da Computação na Universidade Católica de Pernambuco.
+            Tenho interesse em Engenharia de Software, Automação com Python, Data Science e
+            Machine-Learning.
           </Text>
         </View>
 
